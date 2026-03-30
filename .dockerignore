@@ -1,3 +1,9 @@
 node_modules
 app/node_modules
 app/.git
+.git
+.github
+services
+app/.cache
+app/.npm
+.env

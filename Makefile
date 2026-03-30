@@ -1,3 +1,6 @@
+prepare-env:
+	cp -n app/.env.example .env
+
 setup:
 	docker-compose run --rm app make setup
 
