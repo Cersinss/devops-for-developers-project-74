@@ -1,0 +1,7 @@
+services:
+  app:
+    image: cersinss/devops-for-developers-project-74
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    command: make test
