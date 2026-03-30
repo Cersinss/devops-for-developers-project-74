@@ -4,15 +4,15 @@
 
 ## Требования к системе
 
-- **Docker**: установлен и запущен Docker Desktop
-- **Docker Compose**: доступен как `docker compose` или `docker-compose`
-- **Make**: нужен для удобных команд (либо запускайте команды `docker-compose ...` вручную)
+- **Docker**
+- **Docker Compose**
+- **Make**
 
 ## Образ в Docker Hub
 
 Используется образ: `cersinss/devops-for-developers-project-74:latest`.
 
-## Конфигурация (12-factor)
+## Конфигурация
 
 Приложение конфигурируется через переменные окружения:
 
@@ -22,21 +22,19 @@
 - `DATABASE_PASSWORD`
 - `DATABASE_PORT`
 
-Для локального запуска можно использовать файл `.env` (не хранится в репозитории):
-
 ```bash
 make prepare-env
 ```
 
 ## Команды
 
-- **Подготовка** (установка зависимостей и миграции внутри Docker):
+- **Подготовка**
 
 ```bash
 make setup
 ```
 
-- **Запуск в разработке** (Docker Compose + Caddy reverse proxy):
+- **Запуск в разработке**
 
 ```bash
 make dev
@@ -51,7 +49,3 @@ make dev
 ```bash
 make ci
 ```
-
-## CI
-
-Workflow `push` запускает тесты через Docker Compose, собирает production-образ и пушит его в Docker Hub с тегом `latest` (при наличии `DOCKERHUB_USERNAME` и `DOCKERHUB_TOKEN` в GitHub Secrets).
